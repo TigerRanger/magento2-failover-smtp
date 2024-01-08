@@ -1,0 +1,33 @@
+{
+  "name": "layered-navigation-m2",
+  "description": "Nazmul Mail M2",
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0"
+  },
+  "repositories": {
+    "type": "git",
+    "url": "git@gitlab.com:Nazmul/mail-m2.git"
+  },
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Nazmul",
+      "email": "hi@Nazmul.com",
+      "homepage": "https://www.Nazmul.com",
+      "role": "Leader"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Nazmul\\LayeredNavigation\\": ""
+    }
+  }
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="failover_config" translate="label" sortOrder="180">
+            <label>FailOver SMTP</label>
+        </tab>
+        <section id="smtp_failover_config" translate="label" type="text" sortOrder="45" showInDefault="1" showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>FailOver SMTP</label>
+            <tab>failover_config</tab>
+            <resource>Nazmul_Mail::config</resource>
+            <group id="general" translate="label"  sortOrder="91" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <comment><![CDATA[
+                        <style>
+                           .admin__control-table{
+                            min-width:520px;
+                            }
+
+                            .accordion .config .label {
+                              text-align: left;
+                              width: 162px;
+                            }
+
+                           .accordion .config .label span[data-config-scope]::before{
+                                right:auto;
+                                left:0;
+                           }
+
+                           .col-actions {
+	                        text-align: right !important;
+	                        padding-right: 3rem !important;
+
+                            }
+
+                            .accordion .form-inline .config .value {
+                              padding-right: 2rem;
+                              width: 70%;
+                            }
+                            .col-actions-add {
+                                 text-align: right !important;
+                            }
+
+                            button.action-add{
+                                    background: #040324;
+                                    color: white;
+                                    border-radius: 5px;
+                            }
+
+                            button.action-add:hover{
+                            background: #000000;
+                            }
+                        </style>
+                 ]]></comment>
+
+
+                <field id="enable_smtp" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Failover SMTP</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable or Disable this Module</comment>
+                </field>
+
+
+                <field id="conn_name" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Connection Name</label>
+                    <validate>required-entry validate-no-html-tags</validate>
+                    <comment>Ex: any_name , localhost , cls-computer etc</comment>
+                </field>
+
+                <field id="smtp_field" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SMTP Config</label>
+                    <frontend_model>Nazmul\Mail\Block\System\Config\Form\Field\SMTP</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+
+            </group>
+        </section>
+
+    </system>
+</config>
